@@ -20,3 +20,11 @@ spring:
                 username: guest
                 password: guest
                 virtual-host: /
+
+management:
+  health:
+    binders:
+      enabled:true
+
+server:
+  port: 8888

@@ -3,6 +3,7 @@ package tutorial.CloudStream.listner.conditional;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.messaging.Message;
 import org.springframework.messaging.support.MessageBuilder;
@@ -10,6 +11,7 @@ import org.springframework.stereotype.Component;
 import tutorial.CloudStream.processor.TwoOutputProcessor;
 
 @Component
+@EnableBinding(TwoOutputProcessor.class)
 public class TwoOutputStreamListener {
     @Autowired
     TwoOutputProcessor processor;

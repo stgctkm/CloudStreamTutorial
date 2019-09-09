@@ -2,6 +2,7 @@ package tutorial.CloudStream.listner;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.cloud.stream.annotation.EnableBinding;
 import org.springframework.cloud.stream.annotation.StreamListener;
 import org.springframework.cloud.stream.messaging.Processor;
 import org.springframework.messaging.handler.annotation.SendTo;
@@ -9,6 +10,7 @@ import org.springframework.stereotype.Component;
 import tutorial.CloudStream.model.LogMessage;
 
 @Component
+@EnableBinding({Processor.class,})
 public class SimpleStreamListener {
     @StreamListener(Processor.INPUT)
     @SendTo(Processor.OUTPUT)
